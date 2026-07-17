@@ -1,0 +1,96 @@
+/* Reset basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a0b2e; /* Deep arcade purple background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace; /* Classic retro font */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Container centers the canvas and positions overlays */
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3);
+    border: 4px solid #ffffff;
+    background-color: #87CEEB; /* Retro sky blue */
+}
+
+/* CRITICAL: Ensure canvas scales pixel-art without blurring */
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* UI Overlays */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark transparent backdrop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffcc00; /* Arcade yellow */
+    text-shadow: 4px 4px #ff0055; /* Neon pink shadow */
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #00ffff; /* Neon cyan */
+}
+
+/* Arcade Style Buttons */
+.arcade-btn {
+    background-color: #ff0055;
+    color: #ffffff;
+    border: 4px solid #ffffff;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 #ffffff;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.arcade-btn:hover {
+    background-color: #ff3377;
+}
+
+.arcade-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0 #ffffff;
+}

@@ -1,9 +1,32 @@
-<!doctype html>
-<html>
-  <head>
-    <title>name</title>
-  </head>
-  <body>
-    <p>Idk</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Pixel Runner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Main Game Canvas -->
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+        <!-- Start Screen Overlay -->
+        <div id="start-screen" class="overlay">
+            <h1>PIXEL RUNNER</h1>
+            <p>Press Space or Tap to Start</p>
+            <button id="btn-start" class="arcade-btn">START GAME</button>
+        </div>
+
+        <!-- Game Over Overlay -->
+        <div id="game-over-screen" class="overlay hidden">
+            <h1>GAME OVER</h1>
+            <p>Score: <span id="final-score">0000</span></p>
+            <button id="btn-restart" class="arcade-btn">TRY AGAIN</button>
+        </div>
+    </div>
+
+    <!-- Load Game Logic -->
+    <script src="game.js"></script>
+</body>
 </html>
